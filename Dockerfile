@@ -1,6 +1,6 @@
 # Node.js 22.16 버전의 Alpine Linux 기반 이미지를 사용하여 빌드 단계를 정의
 # Alpine은 경량화된 Linux 배포판으로 Docker 이미지 크기를 줄이는 데 효과적
-FROM node:22.16-alpine as build
+FROM node:22.16-alpine AS build
 
 # 컨테이너 내부의 작업 디렉토리를 /app으로 설정
 # 이후 모든 명령어는 이 디렉토리에서 실행됨
@@ -8,7 +8,7 @@ WORKDIR /app
 
 # Node.js 바이너리들을 PATH에 추가하여 npm, npx 등의 명령어를 쉽게 사용할 수 있도록 설정
 # /app/node_modules/.bin 경로를 시스템 PATH 앞부분에 추가
-ENV PATH /app/node_modules/.bin:$PATH
+ENV PATH=/app/node_modules/.bin:$PATH
 
 # 호스트의 package.json 파일을 컨테이너의 /app/package.json으로 복사
 COPY package.json /app/package.json
