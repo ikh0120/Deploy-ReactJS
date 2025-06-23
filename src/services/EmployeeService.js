@@ -73,7 +73,7 @@ const validateEmployeeData = (employee) => {
 export const listEmployees = async () => {
   try {
     console.log('Fetching employees...');
-    const response = await api.get(`${REST_API_URL}/departments`);
+    const response = await api.get(`${REST_API_URL}/employees`);
     console.log('Employees fetched successfully');
     return response;
   } catch (error) {
