@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const REST_API_BASE_URL = import.meta.env.VITE_APIURL || 'http://localhost:8080/api';
-const DEPARTMENT_REST_API_URL = `${REST_API_BASE_URL}/departments`;
+const DEPARTMENT_REST_API_URL = `${REST_API_BASE_URL}/employees`; //여기 departments에서 employees로 수정함
 
 console.log(`REST_API_BASE_URL = ${REST_API_BASE_URL}`);
 console.log(`DEPARTMENT_REST_API_URL = ${DEPARTMENT_REST_API_URL}`);
@@ -68,7 +68,7 @@ const validateDepartmentData = (department) => {
 export const getAllDepartments = async () => {
   try {
     console.log('Fetching departments...');
-    const response = await api.get('/departments');
+    const response = await api.get('/employees'); //여기 departments에서 employees로 수정함
     console.log('Departments fetched successfully');
     return response;
   } catch (error) {
@@ -86,7 +86,7 @@ export const createDepartment = async (department) => {
     };
     
     console.log('Creating department...');
-    const response = await api.post('/departments', cleanDepartment);
+    const response = await api.post('/employees', cleanDepartment); //여기 departments에서 employees로 수정함
     console.log('Department created successfully');
     return response;
   } catch (error) {
@@ -101,7 +101,7 @@ export const getDepartmentById = async (departmentId) => {
     }
     
     console.log(`Fetching department ${departmentId}...`);
-    const response = await api.get(`/departments/${departmentId}`);
+    const response = await api.get(`/employees/${departmentId}`); //여기 departments에서 employees로 수정함
     console.log('Department fetched successfully');
     return response;
   } catch (error) {
@@ -123,7 +123,7 @@ export const updateDepartment = async (departmentId, department) => {
     };
     
     console.log(`Updating department ${departmentId}...`);
-    const response = await api.patch(`/departments/${departmentId}`, cleanDepartment);
+    const response = await api.patch(`/employees/${departmentId}`, cleanDepartment); //여기 departments에서 employees로 수정함
     console.log('Department updated successfully');
     return response;
   } catch (error) {
@@ -138,7 +138,7 @@ export const deleteDepartment = async (departmentId) => {
     }
     
     console.log(`Deleting department ${departmentId}...`);
-    const response = await api.delete(`/departments/${departmentId}`);
+    const response = await api.delete(`/employees/${departmentId}`); //여기 departments에서 employees로 수정함
     console.log('Department deleted successfully');
     return response;
   } catch (error) {
