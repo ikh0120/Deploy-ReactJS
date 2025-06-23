@@ -73,10 +73,7 @@ const validateEmployeeData = (employee) => {
 export const listEmployees = async () => {
   try {
     console.log('Fetching employees...');
-    // 여기 수정
-    // REST_API_URL에 이미 /employees가 포함되어 있으므로 중복 제거
-    // const response = await api.get(`${REST_API_URL}/employees`);
-    const response = await api.get('/employees');
+    const response = await api.get(`${REST_API_URL}/departments`);
     console.log('Employees fetched successfully');
     return response;
   } catch (error) {
@@ -89,9 +86,7 @@ export const createEmployee = async (employee) => {
     validateEmployeeData(employee);
     
     console.log('Creating employee...');
-    // 여기 수정
-    // const response = await api.post(`${REST_API_URL}`, employee);
-    const response = await api.post('/employees', employee);
+    const response = await api.post(`${REST_API_URL}`, employee);
     console.log('Employee created successfully');
     return response;
   } catch (error) {
@@ -106,9 +101,7 @@ export const getEmployee = async (employeeId) => {
     }
     
     console.log(`Fetching employee ${employeeId}...`);
-    // 여기 수정
-    // const response = await api.get(`${REST_API_URL}/${employeeId}`);
-    const response = await api.get(`/employees/${employeeId}`);
+    const response = await api.get(`${REST_API_URL}/${employeeId}`);
     console.log('Employee fetched successfully');
     return response;
   } catch (error) {
@@ -125,9 +118,7 @@ export const updateEmployee = async (employeeId, employee) => {
     validateEmployeeData(employee);
     
     console.log(`Updating employee ${employeeId}...`);
-    // 여기 수정
-    // const response = await api.put(`${REST_API_URL}/${employeeId}`, employee);
-    const response = await api.put(`/employees/${employeeId}`, employee);
+    const response = await api.put(`${REST_API_URL}/${employeeId}`, employee);
     console.log('Employee updated successfully');
     return response;
   } catch (error) {
@@ -142,9 +133,7 @@ export const deleteEmployee = async (employeeId) => {
     }
     
     console.log(`Deleting employee ${employeeId}...`);
-    // 여기 수정
-    // const response = await api.delete(`${REST_API_URL}/${employeeId}`);
-    const response = await api.delete(`/employees/${employeeId}`);
+    const response = await api.delete(`${REST_API_URL}/${employeeId}`);
     console.log('Employee deleted successfully');
     return response;
   } catch (error) {
