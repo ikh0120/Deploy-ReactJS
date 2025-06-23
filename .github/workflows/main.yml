@@ -9,7 +9,7 @@ on:
 
 env:
   DOCKER_IMAGE: springbootreactjs
-  DOCKER_TAG: client0.6
+  DOCKER_TAG: client0.6 # 커밋 할 때 마다 계속 변경하기
   
 jobs:
   Docker:
